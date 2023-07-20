@@ -1,0 +1,30 @@
+// link: https://leetcode.com/problems/two-sum/
+
+fun main(){
+    val numbers = intArrayOf(2,7,11,15)
+    val target = 9
+    twoSum(numbers, target)
+}
+fun twoSum(numbers: IntArray, target: Int): IntArray {
+    val myTestList = mutableListOf("")
+    myTestList.remove("")
+    for (i in numbers){
+        val start = numbers.indexOf(i)+1
+        val stop = numbers.size-1
+        for (x in start..stop){
+            if (i + numbers[x] == target) {
+                val res = "[${numbers.indexOf(i)},$x]"
+                val res1 = "[$x,${numbers.indexOf(i)}]"
+                if (res in myTestList) continue
+                else if(res1 in myTestList) continue
+                else myTestList.add(res)
+            }
+        }
+    }
+    myTestList.remove("")
+    val x = IntArray(10)
+    for (i in myTestList){
+        println(i)
+    }
+    return x
+}
