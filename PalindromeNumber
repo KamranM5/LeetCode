@@ -1,0 +1,9 @@
+// link: https://leetcode.com/problems/palindrome-number/
+fun main() {
+    while (true) {
+        println("Enter the word: ")
+        val str = readln()
+        val res = str == str.reversed()
+    println(res)
+    }
+}
